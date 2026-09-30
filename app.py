@@ -19,7 +19,26 @@ subjects_data = {
 # =========================
 # HOME
 # =========================
-
+@app.route("/sitemap.xml")
+def sitemap():
+    return """<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://notes-website-hrlu.onrender.com/</loc>
+    </url>
+    <url>
+        <loc>https://notes-website-hrlu.onrender.com/class/9</loc>
+    </url>
+    <url>
+        <loc>https://notes-website-hrlu.onrender.com/class/10</loc>
+    </url>
+    <url>
+        <loc>https://notes-website-hrlu.onrender.com/class/11</loc>
+    </url>
+    <url>
+        <loc>https://notes-website-hrlu.onrender.com/class/12</loc>
+    </url>
+</urlset>"""
 @app.route("/")
 def home():
     return render_template(
