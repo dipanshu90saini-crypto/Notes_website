@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ note["title"] }} - Study Notes</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="navbar">
+    📚 Study Notes
+</div>
+
+<div class="container">
+
+    <h1 class="title">{{ note["title"] }}</h1>
+
+    <p class="subtitle">
+        Class {{ class_no }} • {{ subject }}
+    </p>
+
+    <div class="note-box">
+
+        <h2>📖 Notes</h2>
+
+        <div class="note-content">
+            {{ note["content"] }}
+        </div>
+
+    </div>
+
+    <div class="info-box">
+        <h2>💡 Important Points</h2>
+
+        <ul>
+            <li>Rational numbers ko p/q form mein likha ja sakta hai.</li>
+            <li>Irrational numbers p/q form mein nahi likhe ja sakte.</li>
+            <li>Rational aur irrational numbers milkar real numbers banate hain.</li>
+            <li>Har integer ek rational number hota hai.</li>
+        </ul>
+    </div>
+
+    <div class="example-box">
+        <h2>🧠 Examples</h2>
+
+        <p><strong>Example 1:</strong> 1/2 = 0.5</p>
+        <p><strong>Example 2:</strong> 1/3 = 0.333...</p>
+        <p><strong>Example 3:</strong> √2 ek irrational number hai.</p>
+    </div>
+
+    <div class="practice-box">
+        <h2>📝 Practice Questions</h2>
+
+        <ol>
+            <li>Rational number ki definition likho.</li>
+            <li>√3 rational hai ya irrational?</li>
+            <li>5 ko p/q form mein likho.</li>
+            <li>Rational aur irrational numbers mein difference batao.</li>
+        </ol>
+    </div>
+
+    <a class="back"
+       href="/class/{{ class_no }}/subject/{{ subject }}">
+        ⬅️ Back to Chapters
+    </a>
+
+</div>
+
+</body>
+</html>

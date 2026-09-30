@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Panel - Study Notes</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="navbar">
+    🛠️ Study Notes Admin
+</div>
+
+<div class="container">
+
+    <h1 class="title">Add New Note</h1>
+
+    <p class="subtitle">
+        Website mein naya note add karo
+    </p>
+
+    <form class="admin-form" action="/admin/add" method="POST">
+
+        <label>Class</label>
+
+        <select name="class_no" required>
+            <option value="">Select Class</option>
+            <option value="9">Class 9</option>
+            <option value="10">Class 10</option>
+            <option value="11">Class 11</option>
+            <option value="12">Class 12</option>
+        </select>
+
+        <label>Subject</label>
+
+        <input
+            type="text"
+            name="subject"
+            placeholder="Example: Maths"
+            required
+        >
+
+        <label>Chapter</label>
+
+        <input
+            type="text"
+            name="chapter"
+            placeholder="Example: Chapter 1 - Number Systems"
+            required
+        >
+
+        <label>Note Title</label>
+
+        <input
+            type="text"
+            name="title"
+            placeholder="Example: Number Systems"
+            required
+        >
+
+        <label>Notes</label>
+
+        <textarea
+            name="content"
+            rows="10"
+            placeholder="Yahan apne notes likho..."
+            required
+        ></textarea>
+
+        <button type="submit">
+            ➕ Add Note
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

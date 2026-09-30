@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{{ note["title"] }} - Study Notes</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<header>
+    <h1>📚 Study Notes</h1>
+</header>
+
+<main class="note-page">
+
+    <h1>{{ note["title"] }}</h1>
+
+    <p class="subtitle">
+        Class {{ class_no }} • {{ subject }}
+    </p>
+
+    <section class="note-content">
+
+        <div class="notes-box">
+            <h2>📖 Notes</h2>
+            <div class="note-text">
+                {{ note["content"] }}
+            </div>
+        </div>
+
+        {% if extras %}
+
+        <div class="notes-box">
+            <h2>💡 Important Points</h2>
+            <div class="note-text">
+                {{ extras["important_points"] }}
+            </div>
+        </div>
+
+        <div class="notes-box">
+            <h2>🧠 Examples</h2>
+            <div class="note-text">
+                {{ extras["examples"] }}
+            </div>
+        </div>
+
+        <div class="notes-box">
+            <h2>📝 Practice Questions</h2>
+            <div class="note-text">
+                {{ extras["practice_questions"] }}
+            </div>
+        </div>
+
+        {% endif %}
+
+    </section>
+
+    <a class="back"
+       href="/class/{{ class_no }}/subject/{{ subject }}">
+        ⬅️ Back to Chapters
+    </a>
+
+</main>
+
+</body>
+</html>

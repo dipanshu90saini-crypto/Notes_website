@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Class {{ class_no }} - Study Notes</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="navbar">
+    📚 Study Notes
+</div>
+
+<div class="container">
+
+    <h1 class="title">Class {{ class_no }}</h1>
+
+    <p class="subtitle">Apna subject select karo</p>
+
+    <div class="cards">
+
+        {% for subject in subjects %}
+
+        <a class="card"
+           href="/class/{{ class_no }}/subject/{{ subject }}">
+
+            📖 {{ subject }}
+
+        </a>
+
+        {% endfor %}
+
+    </div>
+
+    <a class="back" href="/">
+        ⬅️ Back to Home
+    </a>
+
+</div>
+
+</body>
+</html>

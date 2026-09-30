@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search - Study Notes</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="navbar">
+    📚 Study Notes
+</div>
+
+<div class="container">
+
+    <h1 class="title">🔍 Search Results</h1>
+
+    <p class="subtitle">
+        Results for: "{{ query }}"
+    </p>
+
+    {% if results %}
+
+        <div class="cards">
+
+            {% for result in results %}
+
+                {% if result.chapter %}
+
+                    <a class="card"
+                       href="/class/{{ result.class_no }}/subject/{{ result.subject }}">
+
+                        📖 {{ result.chapter }}
+
+                        <small>
+                            Class {{ result.class_no }} •
+                            {{ result.subject }}
+                        </small>
+
+                    </a>
+
+                {% else %}
+
+                    <a class="card"
+                       href="/class/{{ result.class_no }}">
+
+                        📚 {{ result.subject }}
+
+                        <small>
+                            Class {{ result.class_no }}
+                        </small>
+
+                    </a>
+
+                {% endif %}
+
+            {% endfor %}
+
+        </div>
+
+    {% else %}
+
+        <div class="note-box">
+            <h2>😕 No results found</h2>
+
+            <p>
+                "{{ query }}" ke liye koi result nahi mila.
+            </p>
+        </div>
+
+    {% endif %}
+
+    <a class="back" href="/">
+        ⬅️ Back to Home
+    </a>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Database Notes - Study Notes</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="navbar">
+    📚 Study Notes
+</div>
+
+<div class="container">
+
+    <h1 class="title">🗂️ Database Notes</h1>
+
+    <p class="subtitle">
+        Notes stored in SQLite database
+    </p>
+
+    {% if notes %}
+
+        <div class="cards">
+
+            {% for note in notes %}
+
+                <div class="card">
+
+                    <h2>{{ note["title"] }}</h2>
+
+                    <small>
+                        Class {{ note["class_no"] }}
+                        • {{ note["subject"] }}
+                        • {{ note["chapter"] }}
+                    </small>
+
+                    <p>
+                        {{ note["content"] }}
+                    </p>
+
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+    {% else %}
+
+        <div class="note-box">
+            <h2>📭 No notes yet</h2>
+            <p>Database mein abhi koi note nahi hai.</p>
+        </div>
+
+    {% endif %}
+
+    <a class="back" href="/">
+        ⬅️ Back to Home
+    </a>
+
+</div>
+
+</body>
+</html>

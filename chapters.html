@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ subject }} - Chapters</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="navbar">
+    📚 Study Notes
+</div>
+
+<div class="container">
+
+    <h1 class="title">{{ subject }}</h1>
+
+    <p class="subtitle">
+        Class {{ class_no }} • Chapters
+    </p>
+
+    <div class="chapters">
+
+        {% for chapter in chapters %}
+
+            <a class="chapter-card"
+               href="/class/{{ class_no }}/subject/{{ subject }}/chapter/{{ loop.index }}">
+
+                📖 {{ chapter["chapter"] }}
+
+            </a>
+
+        {% else %}
+
+            <div class="note-box">
+                <p>😕 Is subject ke notes abhi available nahi hain.</p>
+            </div>
+
+        {% endfor %}
+
+    </div>
+
+    <a class="back" href="/class/{{ class_no }}">
+        ⬅️ Back to Subjects
+    </a>
+
+</div>
+
+</body>
+</html>

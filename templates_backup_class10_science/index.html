@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Study Notes</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="navbar">
+    📚 Study Notes
+</div>
+
+<div class="container">
+
+    <h1 class="title">Class 9th to 12th Notes</h1>
+
+    <p class="subtitle">
+        Apni class select karo aur notes padho.
+    </p>
+
+    <div class="cards">
+
+        {% for class_no in classes %}
+            <a class="card" href="/class/{{ class_no }}">
+                🎓 Class {{ class_no }}
+            </a>
+        {% endfor %}
+
+    </div>
+
+</div>
+
+</body>
+</html>
+<form class="search-box" action="/search" method="GET">
+    <input
+        type="text"
+        name="q"
+        placeholder="🔍 Search notes, subjects..."
+        required
+    >
+
+    <button type="submit">Search</button>
+</form>

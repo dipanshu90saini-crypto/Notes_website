@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Study Notes</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="navbar">
+    📚 Study Notes
+</div>
+
+<div class="container">
+
+    <h1 class="title">Welcome to Study Notes 📚</h1>
+
+    <p class="subtitle">
+        Apni class select karo aur notes padhna start karo.
+    </p>
+
+    <div class="class-grid">
+
+        {% for class_no in classes %}
+
+            <a class="class-card"
+               href="/class/{{ class_no }}">
+                <span>📘</span>
+                <strong>Class {{ class_no }}</strong>
+                <small>View Subjects →</small>
+            </a>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+</body>
+</html>
